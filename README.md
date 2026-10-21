@@ -1,85 +1,199 @@
-# Awesome-Prompt-Engineering-Workflows
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome Prompt Engineering Workflows Banner" width="100%" />
+</p>
 
-## Top Prompt Engineering & Workflows Ecosystem
+# 🧠 Awesome Prompt Engineering Workflows ⚡
 
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-*Focused on Pattern-Based Prompt Libraries, Version Control & Evaluation-Driven Iteration*  
-**Last updated: March 2026**
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **Prompt Engineering & Workflows**. These tools help teams design, version, test, and deploy prompts as engineering artifacts — moving beyond ad-hoc chat instructions into reproducible, evaluable, and collaborative workflows.
-
-**Examples** include Fabric, LangSmith Hub, Agenta, PRISM, Prompt Framework V2, Prompt Engineering Architect, Jasper, Copy.ai, Writer, and Frase (the category leaders).
-
-**Open-source emphasis**: This section is heavily expanded with every major active project for self-hosting, pattern libraries, and evaluation-driven prompt iteration — ideal for teams prioritizing data sovereignty, avoiding vendor lock-in, and managing prompts with the same rigor as application code.
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-## Table of Contents
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-- [Open-Source GitHub Projects](#open-source-github-projects)
-- [How to Contribute](#how-to-contribute)
-- [Disclaimer](#disclaimer)
-
-## SaaS/Hosted Platforms
-
-- **[LangSmith Hub](https://smith.langchain.com/hub)**  
-  **The centralized prompt repository for the LangChain ecosystem.** Store, version, review, and update prompts without a full deploy. **Commit hashes enable version-specific pulling** — pin `handle/prompt:version` for stable production deployments instead of risking "latest" changes [citation:2][citation:14]. **Playground** for testing prompts with custom endpoints and model configurations. **Context Hub** extends versioning to bundles of instructions and tools defining agent skills, promoted through environments [citation:7].
-
-- **[Jasper](https://www.jasper.ai/)**  
-  AI marketing platform with brand voice, campaign templates, and workflow automation for content teams. Enterprise-focused with governance and collaboration features.
-
-- **[Copy.ai](https://www.copy.ai/)**  
-  AI-powered copywriting and GTM workflow platform with templates, brand voice, and multi-step automation.
-
-- **[Writer](https://writer.com/)**  
-  Enterprise generative AI platform with brand-consistent content generation, knowledge graph integration, and compliance controls.
-
-- **[Frase](https://www.frase.io/)**  
-  AI content optimization and research workflow platform with SERP analysis and brief generation.
-
-## Open-Source GitHub Projects
-
-- **[Fabric](https://github.com/danielmiessler/fabric)**  
-  **The leading open-source framework for augmenting humans using AI prompts** — MIT licensed, **50,000+ GitHub stars** [citation:4]. **"A modular system for solving specific problems using a crowdsourced set of AI prompts that can be used anywhere"** [citation:4]. **Patterns** are reusable prompt templates stored as Markdown files (`patterns/{name}/system.md`), designed for maximum readability and editability — both for the creator and the AI receiving them [citation:1]. **Pattern library covers** extracting wisdom from YouTube/podcasts, writing in your voice, summarizing papers, explaining code, generating social posts, and more [citation:6]. **CLI-first**: `fabric --pattern summarize` or create aliases so `summarize` works directly. **REST API** via `--serve` for programmatic access. **YouTube transcript grabbing**, **Jina AI web scraping**, and **multi-provider support** built in [citation:1]. **Install via Homebrew (`fabric-ai`), Go, or release binaries** for Linux, macOS, and Windows [citation:6]. **Best for individuals and teams wanting a crowdsourced pattern library** with CLI and API access, independent of any specific LLM provider.
-
-- **[Agenta](https://github.com/agenta-ai/agenta)**  
-  **End-to-end open-source LLM developer platform for prompt engineering, evaluation, and deployment** — all functional features MIT-licensed [citation:3][citation:11]. **Playground** for comparing and versioning prompts on any LLM workflow — chains, RAG, or agents [citation:3]. **Evaluation** with pre-existing or custom evaluators; define test sets and evaluate variants manually or programmatically [citation:3]. **Human annotation** for A/B testing and scoring. **One-click deployment** as APIs via UI, CLI, or GitHub workflows. **Framework-agnostic** — works with LangChain, LlamaIndex, and any LLM provider [citation:3]. **Best for teams wanting collaborative prompt engineering tightly integrated with evaluation and deployment.**
-
-- **[PRISM](https://github.com/tomfordrumm/prism)**  
-  **Open-source Prompt IDE for prompt engineers and product teams** — MIT licensed [citation:8]. **Prompt templates with immutable versions and variable extraction.** **Chains** of LLM calls with per-step models, params, and schema validation. **Agents** for chatbots with dedicated system prompts. **Dataset test cases** with batch runs. **Run tracing** — prompts, responses, tokens, timing, validation errors. **Feedback and AI-assisted prompt improvement** in a guided chat flow. **Multi-tenant workspaces** with strict tenant isolation. **Provider credentials** for OpenAI, Anthropic, Google Gemini, and OpenRouter. **Docker-first deployment** (`docker compose up --build`) with Laravel 12, Vue 3, Redis, and SQLite [citation:8]. **Best for teams wanting a structured IDE-like workspace** for templates, chains, and dataset-driven testing.
-
-- **[Prompt Framework V2](https://github.com/zsolemolano/Prompt_Framework)**  
-  **Production-grade Python module with 12+ built-in prompt engineering frameworks** — CoSTAR, CARE, RACE, APE, CREATE, TAG, CREO, RISE, PAIN, COAST, ROSES, and REACT [citation:5]. **Custom framework registration** at runtime. **Reinforcement-learning tuning** with an ε-greedy bandit for template version selection based on user feedback [citation:5]. **Shot modes** (zero, single, few) via `ShotMode` enum. **Prompt chaining** across frameworks. **Chain-of-Thought, Self-Ask, and Tree-of-Thought toggles.** **RAG integration hook** for document retrieval. **Validation** (length/placeholder) and **sanitization** (PII redaction for emails and 10-digit numbers) [citation:5]. **Best for teams wanting structured, tunable prompt generation** with built-in frameworks and feedback loops.
-
-- **[Prompt Engineering Architect](https://github.com/sarefin-dev/prompt-engineering-architect)**  
-  **A workflow operating system that injects rigorous prompt engineering methodology into Claude Code and MCP agents** [citation:13]. **Operationalizes the APOS structure** (Role, Context, Focus, Task, Output) plus **vocabulary discipline** across 9 categories. **Pre-Deployment Gate** rejects prompts lacking structure or containing probability-reducing vocabulary. **Nine specialized agent personas** and **15 methodological skills** via `.claude/skills/`. **Eleven slash commands** for workflow acceleration. **200+ APOS templates** in the template library. **RED-GREEN test pairs** prove efficacy of injected methodology [citation:13]. **Best for teams using Claude Code** wanting methodology-enforced prompt assembly with automated quality gates.
-
-### Additional Strong Open-Source Options
-
-- **Langfuse** — MIT-licensed AI engineering platform with prompt management, tracing, and evaluation integrated. Client-side SDK caching so prompt fetches add no latency after the first hit.
-- **Pezzo** — Open-source developer-first LLMOps platform with prompt design, version management, and instant delivery. Node.js, Python, and LangChain SDKs.
-- **promptfoo** — Open-source CLI for evaluating and red-teaming LLM apps. Test-driven prompt development with matrix views and CI/CD integration.
-- **Glue-Prompt** — Git-native prompt repository server. Prompts stored as YAML in Git, served via FastAPI with Jinja2 template rendering and version management.
-- **Latitude** — Open-source AI engineering platform with observability, evaluation, and prompt optimization (GEPA) driven by production failures.
-
-**Frameworks for building custom systems**: Combine **Fabric** for a crowdsourced pattern library with CLI/API access, **Agenta** for prompt engineering with integrated evaluation and one-click deployment, **PRISM** for a structured IDE with chains and dataset testing, **Prompt Framework V2** for built-in frameworks with RL-based template tuning, and **Prompt Engineering Architect** for methodology-enforced prompt assembly in Claude Code — to build a prompt engineering workflow tailored to your team's tooling, evaluation rigor, and deployment model.
-
-## How to Contribute
-
-1. Fork the repo.
-2. Add/edit entries in `README.md` (follow existing format).
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-4. Submit PR with a short explanation.
-
-Star the repo if you find it useful!
-
-## Disclaimer
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-- Prompt engineering workflows differ significantly in abstraction level, evaluation integration, and deployment model. **Fabric's Patterns are Markdown files** — human-readable and editable by both the creator and the AI [citation:1]. **LangSmith Hub's commit-hash versioning** prevents production deployments from accidentally pulling "latest" [citation:14]. **Agenta open-sourced all functional features under MIT** including evaluation and prompt management [citation:11]. **Prompt Framework V2's RL tuning** adjusts template version selection based on user ratings [citation:5]. **Prompt Engineering Architect's quality gates** reject prompts lacking structure or containing weakening vocabulary [citation:13]. **No workflow can compensate for unclear task specification** — prompts are specifications, and ambiguous specs produce ambiguous outputs regardless of tooling.
-- Self-hosted open-source solutions require proper version pinning (commit hashes or immutable tags), evaluation dataset curation, and consistent deployment across development and production environments.
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Prompt-Engineering-Workflows"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Prompt-Engineering-Workflows?style=flat-square&logo=github&color=gold" alt="GitHub Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Prompt-Engineering-Workflows/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-Prompt-Engineering-Workflows?style=flat-square&color=blue" alt="License"/></a>
+  <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"/></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
+<!-- <a href="https://github.comiishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a> -->
 
 ---
 
-**Made for AI engineers, prompt engineers, and teams managing prompts as versioned, evaluated engineering artifacts.**
-Let's make prompt engineering workflows more open, reproducible, and evaluation-driven.
+## 📖 Overview
+
+A comprehensive, production-grade curated list of **Prompt Engineering Workflows**, **Prompt Management Systems**, and **LLMOps Platforms**. This guide catalogs industry-leading SaaS products and open-source GitHub repositories focused on treating prompts as versioned, testable, and reproducible software engineering artifacts.
+
+Modern AI development has shifted beyond informal chat instructions into structured prompt engineering architectures. This repository highlights platforms providing **commit-hash prompt versioning**, **automated matrix evaluation**, **prompt regression test suites**, **declarative prompt compilers**, and **continuous integration for Large Language Models (LLMs)**.
+
+---
+
+## 📑 Table of Contents
+
+- [📊 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [☁️ SaaS & Hosted Platforms](#️-saas--hosted-platforms)
+- [💻 Open-Source GitHub Projects](#-open-source-github-projects)
+- [🛠️ Architectural Workflow Blueprint](#️-architectural-workflow-blueprint)
+- [🔍 SEO Taxonomy & Keyword Reference](#-seo-taxonomy--keyword-reference)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [☕ Support & Sponsorship](#-support--sponsorship)
+- [⭐ Star History](#-star-history)
+- [⚠️ Disclaimer](#️-disclaimer)
+
+---
+
+## 📊 Sector Overview & Market Dynamics
+
+The global **Prompt Engineering and LLMOps Workflow** ecosystem is experiencing rapid commercial acceleration, valued at approximately **$671M to $896M in 2026** and projected to expand at a compound annual growth rate (CAGR) of **28% to 33%** toward **$4.5B–$7.8B by 2030** (with adjacent LLMOps and lifecycle infrastructure exceeding $8.0B).
+
+The sector exhibits **moderate fragmentation**: while enterprise content engines (e.g., Writer) and foundational LLM frameworks (e.g., LangChain / LangSmith) have captured significant enterprise early adoption, open standards (such as Model Context Protocol - MCP, DSPy programmatic optimizers, and Git-native repositories) prevent a monopolistic "winner-take-all" concentration. Instead, the market is shifting toward specialized, composable stacks separating prompt authoring, automated regression testing, observability, and runtime delivery.
+
+---
+
+## ☁️ SaaS & Hosted Platforms
+
+The following SaaS platforms offer hosted infrastructure for prompt engineering, version tracking, enterprise governance, and multi-step agentic workflows. 
+
+Entries are sorted in **descending order by company scale (Valuation / ARR / Funding)**.
+
+| Platform | Company Scale (Valuation / Revenue) | Starting Pricing | Free Tier / Trial Limits | Core Workflow Capabilities |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Writer](https://writer.com/)** | **$1.9B Valuation**<br>*(Series C, $326M+ funding)* | **$29 / user / month**<br>*(Billed annually; or $39/mo monthly)* | **14-day free trial**<br>*(No credit card required; up to 5 users, 1 GB Knowledge Graph storage, 5 custom playbooks/agents)* | Enterprise generative AI platform with integrated knowledge graph, automated style governance, APOS prompt structures, and multi-agent workflow orchestration. |
+| **[Jasper](https://www.jasper.ai/)** | **$1.5B Valuation**<br>*(~$88M ARR, $143M funding)* | **$39 / month**<br>*(Creator tier billed annually; or $49/mo monthly)* | **7-day free trial**<br>*(Credit card required; unlimited AI words, 1 brand voice, 1 user seat, SEO mode)* | Enterprise AI marketing workflow engine featuring multi-channel campaign acceleration, brand voice guidelines, and prompt template repositories. |
+| **[LangSmith](https://smith.langchain.com/)** | **$1.25B Valuation**<br>*(~$16M ARR, $125M Series B)* | **$39 / seat / month**<br>*(Plus tier; Developer tier is $0)* | **Free Forever plan**<br>*(1 user seat, 5,000 base traces/month, 14-day data retention, prompt hub access, and playground testing)* | Centralized prompt repository for LangChain & LangGraph. Provides commit-hash prompt versioning (`handle/prompt:hash`), playground evaluations, and CI/CD test gates. |
+| **[Copy.ai](https://www.copy.ai/)** | **~$500M Valuation**<br>*(~$35M ARR, $63M funding)* | **$24 / month**<br>*(Chat tier billed annually; or $29/mo monthly; Agents tier at $249/mo)* | **Free introductory credit grant**<br>*(200 bonus workflow credits upon sign-up; view-only mode post-trial)* | Go-To-Market (GTM) AI orchestration platform featuring multi-step prompt chaining, sales prospecting workflows, and brand governance. |
+| **[Vellum](https://www.vellum.ai/)** | **$25.5M Funding**<br>*(Series A led by Leaders Fund & YC)* | **$30 / month**<br>*(Assistant compute preset; Pro Platform tier at $500/mo)* | **Free Forever tier**<br>*(Up to 5 users, constrained daily workflow executions, small assistant compute allowance, pass-through token rates)* | Enterprise LLMOps environment for prompt engineering sandboxes, multi-model side-by-side benchmarking, RAG orchestration, and automated unit testing. |
+| **[PromptLayer](https://www.promptlayer.com/)** | **$5.0M Funding**<br>*(~$1.5M ARR, Seed round)* | **$49 / month**<br>*(Pro tier; Enterprise custom)* | **Free Forever tier**<br>*(2,500 requests/month, 5 users, 1 workspace, 250 evaluation cell executions/month, 10MB dataset limit)* | Developer-first prompt management CMS featuring real-time request logging, immutable prompt versioning, visual A/B testing, and dataset iteration. |
+| **[Frase](https://www.frase.io/)** | **~$1.8M ARR**<br>*($1.2M funding, PE/Acquisition-backed)* | **$39 / month**<br>*(Solo tier billed annually; or $49/mo monthly)* | **7-day free trial**<br>*(No credit card required; full access to SERP analysis, brief creation, and AI content optimization)* | SEO-focused content optimization workflow platform combining live search engine research, automated content brief generation, and prompt templates. |
+
+---
+
+## 💻 Open-Source GitHub Projects
+
+Open-source prompt engineering engines, declarative frameworks, and LLMOps evaluation suites are essential for data sovereignty, avoiding vendor lock-in, and maintaining rigorous version control.
+
+All repositories are sorted in **descending order by GitHub star count**. Each badge links directly to that repository's official Stargazers page.
+
+- **[Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)** <a href="https://github.com/f/prompts.chat/stargazers"><img src="https://img.shields.io/github/stars/f/prompts.chat?style=social&color=white" alt="Awesome ChatGPT Prompts Stars"/></a>  
+  Massive community-driven prompt repository and pattern collection (`prompts.chat`). Provides production-tested system prompts, role-play personas, and task-specific prompt templates covering engineering, code translation, security auditing, and creative workflows.
+
+- **[Dify](https://github.com/langgenius/dify)** <a href="https://github.com/langgenius/dify/stargazers"><img src="https://img.shields.io/github/stars/langgenius/dify?style=social&color=white" alt="Dify Stars"/></a>  
+  Comprehensive open-source LLM application development platform. Features visual prompt orchestration, prompt engineering playgrounds, RAG pipeline building, agent runtime execution, and full model observability.
+
+- **[Prompt Engineering Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)** <a href="https://github.com/dair-ai/Prompt-Engineering-Guide/stargazers"><img src="https://img.shields.io/github/stars/dair-ai/Prompt-Engineering-Guide?style=social&color=white" alt="Prompt Engineering Guide Stars"/></a>  
+  The industry's leading educational and reference repository by DAIR.AI. Tracks state-of-the-art prompt engineering research, Chain-of-Thought (CoT), Tree-of-Thought (ToT), Directional Stimulus Prompting, and automated prompt tuning techniques with code notebooks.
+
+- **[Fabric](https://github.com/danielmiessler/fabric)** <a href="https://github.com/danielmiessler/fabric/stargazers"><img src="https://img.shields.io/github/stars/danielmiessler/fabric?style=social&color=white" alt="Fabric Stars"/></a>  
+  Modular open-source framework designed to augment human intelligence through crowdsourced prompt patterns. Prompts are stored as human- and AI-readable Markdown files (`patterns/{name}/system.md`). Includes a CLI-first interface, local REST API server (`--serve`), YouTube transcript extractors, and multi-model support.
+
+- **[DSPy](https://github.com/stanfordnlp/dspy)** <a href="https://github.com/stanfordnlp/dspy/stargazers"><img src="https://img.shields.io/github/stars/stanfordnlp/dspy?style=social&color=white" alt="DSPy Stars"/></a>  
+  Stanford's groundbreaking declarative framework that shifts prompt engineering into programmatic prompt compiling and optimization. Replaces hand-crafted, brittle prompt strings with modular Python signatures and algorithmic teleprompters (MIPROv2, BootstrapFewShot).
+
+- **[Langfuse](https://github.com/langfuse/langfuse)** <a href="https://github.com/langfuse/langfuse/stargazers"><img src="https://img.shields.io/github/stars/langfuse/langfuse?style=social&color=white" alt="Langfuse Stars"/></a>  
+  Open-source LLMOps and prompt management platform. Provides client-side SDK caching for zero-latency prompt retrieval, semantic prompt versioning, trace observability, and continuous evaluation pipelines.
+
+- **[Promptfoo](https://github.com/promptfoo/promptfoo)** <a href="https://github.com/promptfoo/promptfoo/stargazers"><img src="https://img.shields.io/github/stars/promptfoo/promptfoo?style=social&color=white" alt="Promptfoo Stars"/></a>  
+  CLI tool and library for test-driven prompt engineering and automated LLM application red-teaming. Features matrix evaluations across dozens of prompts and models, automated regression assertions, CI/CD pipeline integration, and vulnerability scanning.
+
+- **[Opik](https://github.com/comet-ml/opik)** <a href="https://github.com/comet-ml/opik/stargazers"><img src="https://img.shields.io/github/stars/comet-ml/opik?style=social&color=white" alt="Opik Stars"/></a>  
+  Open-source end-to-end LLM evaluation and prompt tracing platform developed by Comet. Powers automated evaluation metric scoring, prompt version tracking, and dataset testing across compound agent architectures.
+
+- **[Guidance](https://github.com/guidance-ai/guidance)** <a href="https://github.com/guidance-ai/guidance/stargazers"><img src="https://img.shields.io/github/stars/guidance-ai/guidance?style=social&color=white" alt="Guidance Stars"/></a>  
+  Efficient prompting language from Microsoft and the open-source community that interweaves generation, prompt templating, and token-level constraints. Guarantees deterministic output structures, eliminates syntax errors, and optimizes prompt caching.
+
+- **[Outlines](https://github.com/dottxt-ai/outlines)** <a href="https://github.com/dottxt-ai/outlines/stargazers"><img src="https://img.shields.io/github/stars/dottxt-ai/outlines?style=social&color=white" alt="Outlines Stars"/></a>  
+  Fast, reliable structured text generation library. Guides model token logits using regular expressions and context-free grammars (CFGs) to guarantee 100% compliant JSON schemas, SQL queries, and typed outputs directly from prompts.
+
+- **[Phoenix](https://github.com/Arize-ai/phoenix)** <a href="https://github.com/Arize-ai/phoenix/stargazers"><img src="https://img.shields.io/github/stars/Arize-ai/phoenix?style=social&color=white" alt="Phoenix Stars"/></a>  
+  AI observability, prompt evaluation, and trace visualization platform by Arize AI. Supports automated LLM evaluations (Evals), embedding analysis, and benchmark tracking for RAG and multi-step prompt chains.
+
+- **[Promptflow](https://github.com/microsoft/promptflow)** <a href="https://github.com/microsoft/promptflow/stargazers"><img src="https://img.shields.io/github/stars/microsoft/promptflow?style=social&color=white" alt="Promptflow Stars"/></a>  
+  Microsoft's developer suite designed to streamline the end-to-end development cycle of prompt workflows. Enables interactive visual DAG flow authoring, parallel prompt variant experimentation, comprehensive tuning, and CI/CD testing.
+
+- **[Agenta](https://github.com/agenta-ai/agenta)** <a href="https://github.com/agenta-ai/agenta/stargazers"><img src="https://img.shields.io/github/stars/agenta-ai/agenta?style=social&color=white" alt="Agenta Stars"/></a>  
+  Developer platform for collaborative prompt engineering, evaluation, and instant API deployment. Features side-by-side prompt playgrounds, human annotation workflows, automated test suites, and one-click containerized deployments.
+
+- **[Pezzo](https://github.com/pezzolabs/pezzo)** <a href="https://github.com/pezzolabs/pezzo/stargazers"><img src="https://img.shields.io/github/stars/pezzolabs/pezzo?style=social&color=white" alt="Pezzo Stars"/></a>  
+  Open-source developer-first prompt management and LLMOps studio. Delivers prompt versioning, instant deployment without code changes, cost analytics, and unified SDKs for Node.js and Python.
+
+- **[Promptl](https://github.com/latitude-dev/promptl)** <a href="https://github.com/latitude-dev/promptl/stargazers"><img src="https://img.shields.io/github/stars/latitude-dev/promptl?style=social&color=white" alt="Promptl Stars"/></a>  
+  Declarative markup language engineered specifically for prompts. Enables modular, component-based prompt construction with variables, loops, conditional rendering, and cross-framework portability.
+
+- **[Prompt Engineering Architect](https://github.com/sarefin-dev/prompt-engineering-architect)** <a href="https://github.com/sarefin-dev/prompt-engineering-architect/stargazers"><img src="https://img.shields.io/github/stars/sarefin-dev/prompt-engineering-architect?style=social&color=white" alt="Prompt Engineering Architect Stars"/></a>  
+  Workflow operating system injecting disciplined prompt engineering methodology into Claude Code and MCP agent environments. Enforces APOS prompt structures, vocabulary filters, and automated pre-deployment quality gates.
+
+- **[PRISM](https://github.com/tomfordrumm/prism)** <a href="https://github.com/tomfordrumm/prism/stargazers"><img src="https://img.shields.io/github/stars/tomfordrumm/prism?style=social&color=white" alt="PRISM Stars"/></a>  
+  Open-source Prompt IDE for prompt engineers and engineering teams. Features immutable prompt versioning, multi-step LLM chain visualization, dataset batch executions, run tracing, and tenant workspace isolation.
+
+---
+
+## 🛠️ Architectural Workflow Blueprint
+
+To build a modern, production-grade Prompt Engineering & Evaluation pipeline:
+
+```mermaid
+flowchart LR
+    A["📝 Prompt Authoring<br>(Fabric / Promptl)"] --> B["⚙️ Programmatic Compilation<br>(DSPy / Guidance)"]
+    B --> C["🧪 Matrix Evaluation<br>(Promptfoo / Opik)"]
+    C --> D["🏷️ Version Control & Hub<br>(LangSmith / Langfuse)"]
+    D --> E["🚀 Production LLMOps<br>(Vellum / Dify Runtime)"]
+```
+
+1. **Prompt Specification & Authoring**: Maintain system prompts as modular Markdown patterns with clear input schemas and variables (**Fabric**, **Promptl**).
+2. **Programmatic Compilation & Constraint Enforcement**: Compile prompt parameters using teleprompter optimizers and enforce rigid JSON schemas at the token level (**DSPy**, **Outlines**, **Guidance**).
+3. **Automated Matrix Evaluation & Red Teaming**: Execute continuous automated test matrices in CI/CD against ground-truth evaluation datasets before releasing prompt changes (**Promptfoo**, **Opik**).
+4. **Git-Native Versioning & Registry**: Deploy prompt variants using pinned commit hashes or immutable semantic tags rather than volatile dynamic tags (**LangSmith**, **Langfuse**).
+5. **Observability & Continuous Production Monitoring**: Track latency, token drift, and semantic evaluation metrics on live production traces (**Phoenix**, **Vellum**).
+
+---
+
+## 🔍 SEO Taxonomy & Keyword Reference
+
+For optimal search indexing and developer discoverability across technical search engines and AI assistants, this repository indexes the following taxonomy:
+
+```
+Prompt Engineering • Prompt Versioning • Prompt Management • LLMOps • Prompt Optimization •
+Prompt Evaluation • Automated Red Teaming • Few-Shot Prompting • Chain-of-Thought (CoT) •
+Tree-of-Thought (ToT) • DSPy Teleprompter • Fabric Patterns • LangSmith Prompt Hub •
+Promptfoo Matrix Testing • Structured Outputs • Outlines • Guidance • Model Context Protocol (MCP) •
+Prompt Quality Gates • LLM Observability • Prompt Caching • Generative AI Workflows •
+Agentic Workflows • System Prompts • AI Test Gates • Prompt Registry • Continuous Evaluation
+```
+
+---
+
+## 🤝 How to Contribute
+
+Contributions from prompt engineers, AI researchers, and LLMOps developers are enthusiastically welcomed!
+
+1. 🍴 **Fork the repository**.
+2. 🌿 **Create a new branch** (`git checkout -b feature/add-new-prompt-workflow`).
+3. 📝 **Add or update entries** following the tabular format for SaaS or list format for Open-Source repos (maintain strict descending order!).
+4. 🔗 **Ensure accurate links, star badges, and factual pricing/free-tier limits**.
+5. 🚀 **Submit a Pull Request** with a concise description of your additions.
+
+---
+
+## ☕ Support & Sponsorship
+
+If you find this curated Prompt Engineering & LLMOps Workflows repository helpful, please consider starring the repository and supporting further open-source research and curation! ⭐
+
+- 💖 **Sponsor on GitHub**: [https://github.com/sponsors/ishandutta2007](https://github.com/sponsors/ishandutta2007)
+- 🌟 **Star the Repository**: Click the star button at the top right of this page!
+- 🍴 **Fork & Contribute**: Submit PRs with new open-source prompt tools, frameworks, and workflow benchmarks.
+- 📢 **Share with your Engineering Team**: Help spread awareness across Twitter/X, LinkedIn, and Discord.
+
+---
+
+## ⭐ Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-Prompt-Engineering-Workflows&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-Prompt-Engineering-Workflows&type=date&legend=top-left)
+
+---
+
+## ⚠️ Disclaimer
+
+- This repository is a **community-curated index** for educational and architectural reference — not a commercial endorsement.
+- Prompt engineering tooling evolves rapidly. Always verify current upstream pricing, model quotas, and licensing before deploying in production environments.
+- Self-hosted open-source platforms require appropriate security boundaries, API key management, and evaluation dataset hygiene to ensure reliable and safe LLM outputs.
+
+---
+
+<p align="center">
+  <b>Built with ❤️ for AI engineers, prompt architects, and LLMOps practitioners.</b>
+</p>
