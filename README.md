@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Prompt-Engineering-Workflows"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Prompt-Engineering-Workflows?style=flat-square&logo=github&color=gold" alt="GitHub Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Prompt-Engineering-Workflows"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Prompt-Engineering-Workflows?style=flat-square&logo=github&color=gold" alt="GitHub_Stars"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Prompt-Engineering-Workflows/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-Prompt-Engineering-Workflows?style=flat-square&color=blue" alt="License"/></a>
   <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"/></a>
   <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
@@ -67,7 +67,7 @@ Entries are sorted in **descending order by company scale (Valuation / ARR / Fun
 
 Open-source prompt engineering engines, declarative frameworks, and LLMOps evaluation suites are essential for data sovereignty, avoiding vendor lock-in, and maintaining rigorous version control.
 
-All repositories are sorted in **descending order by GitHub star count**. Each badge links directly to that repository's official Stargazers page.
+All repositories are sorted in **descending order by GitHub Stars_Count**. Each badge links directly to that repository's official Stargazers page.
 
 - **[Awesome ChatGPT Prompts](https://github.com/f/awesome-chatgpt-prompts)** <a href="https://github.com/f/prompts.chat/stargazers"><img src="https://img.shields.io/github/stars/f/prompts.chat?style=social&color=white" alt="Awesome ChatGPT Prompts Stars"/></a>  
   Massive community-driven prompt repository and pattern collection (`prompts.chat`). Provides production-tested system prompts, role-play personas, and task-specific prompt templates covering engineering, code translation, security auditing, and creative workflows.
@@ -164,7 +164,7 @@ Contributions from prompt engineers, AI researchers, and LLMOps developers are e
 1. 🍴 **Fork the repository**.
 2. 🌿 **Create a new branch** (`git checkout -b feature/add-new-prompt-workflow`).
 3. 📝 **Add or update entries** following the tabular format for SaaS or list format for Open-Source repos (maintain strict descending order!).
-4. 🔗 **Ensure accurate links, star badges, and factual pricing/free-tier limits**.
+4. 🔗 **Ensure accurate links, Stars_Badges, and factual pricing/free-tier limits**.
 5. 🚀 **Submit a Pull Request** with a concise description of your additions.
 
 ---
